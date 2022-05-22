@@ -1,11 +1,18 @@
 package org.d3if2036.hitungkecepatan
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import org.d3if2036.hitungkecepatan.model.HasilKecepatan
 
 class MainViewModel : ViewModel (){
-    fun hitungKec(jarak: Float, waktu:Float): HasilKecepatan {
+
+    private val hasilKecepatan = MutableLiveData<HasilKecepatan?>()
+
+    fun hitungKec(jarak: Float, waktu:Float){
         val hitungkecepatan = jarak / waktu
-        return HasilKecepatan(hitungkecepatan)
+        hasilKecepatan.value = HasilKecepatan(hitungkecepatan)
     }
+
+    fun getHasilKecepatan(): LiveData<HasilKecepatan?> = hasilKecepatan
 }

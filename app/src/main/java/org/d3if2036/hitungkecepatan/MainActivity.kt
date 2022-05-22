@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.button.setOnClickListener { hitungKec() }
+        viewModel.getHasilKecepatan().observe(this, { showResult(it)})
     }
     private fun hitungKec() {
         val jarak = binding.jarakInp.text.toString()
@@ -37,15 +37,14 @@ class MainActivity : AppCompatActivity() {
                 return
         }
 
-        val result = viewModel.hitungKec(
+        viewModel.hitungKec(
             jarak.toFloat(),
             waktu.toFloat()
         )
-
-        showResult(result)
     }
 
-    private fun showResult(result: HasilKecepatan){
+    private fun showResult(result: HasilKecepatan?){
+        if (result == null) return
         binding.total.text = getString(R.string.hasilKecepatan, result.kecepatan)
 
     }
