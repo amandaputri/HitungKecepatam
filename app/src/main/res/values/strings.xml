@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hitung Kecepatan (V)</string>
+    <string name="jarak">Jarak (km)</string>
+    <string name="waktu">Waktu (jam)</string>
+    <string name="hitungKec">Hitung</string>
+    <string name="jarak_invalid">Isi Jarak</string>
+    <string name="waktu_invalid">Isi Waktu</string>
+    <string name="hasilKecepatan">Kecepatan : %1$.2f km/jam</string>
+</resources>
