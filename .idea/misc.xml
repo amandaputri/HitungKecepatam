@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Assessment-1-master/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Assessment-1-master/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Assessment-1-master/app/src/main/res/layout/fragment_hitung.xml" value="0.1" />
         <entry key="..\:/Users/Modern 14/Mobpro/HitungKecepatan/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>

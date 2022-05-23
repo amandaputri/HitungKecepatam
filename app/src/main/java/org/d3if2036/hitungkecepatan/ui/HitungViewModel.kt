@@ -1,4 +1,4 @@
-package org.d3if2036.hitungkecepatan
+package org.d3if2036.hitungkecepatan.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
