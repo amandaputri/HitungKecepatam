@@ -2,12 +2,12 @@ package org.d3if2036.hitungkecepatan.ui
 
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import org.d3if2036.hitungkecepatan.R
 import org.d3if2036.hitungkecepatan.databinding.FragmentHitungBinding
 import org.d3if2036.hitungkecepatan.model.HasilKecepatan
@@ -25,12 +25,32 @@ class HitungFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHitungBinding.inflate(layoutInflater, container, false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.button.setOnClickListener { hitungKec() }
+        binding.RumusButton.setOnClickListener {
+            it.findNavController().navigate(
+                R.id.action_hitungFragment_to_rumusFragment
+            )
+        }
         viewModel.getHasilKecepatan().observe(requireActivity(), {showResult(it)})
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_about) {
+            findNavController().navigate(
+                R.id.action_hitungFragment_to_aboutFragment)
+            return true
+            }
+            return super.onOptionsItemSelected(item)
     }
 
     private fun hitungKec() {
@@ -55,6 +75,6 @@ class HitungFragment : Fragment() {
     private fun showResult(result: HasilKecepatan?){
         if (result == null) return
         binding.total.text = getString(R.string.hasilKecepatan, result.kecepatan)
-
+        binding.RumusButton.visibility = View.VISIBLE
     }
 }

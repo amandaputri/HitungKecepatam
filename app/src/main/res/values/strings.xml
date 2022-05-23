@@ -8,5 +8,8 @@
     <string name="hasilKecepatan">Kecepatan : %1$.2f km/jam</string>
     <string name="judul_kecepatan">Rumus Mencari Kecepatan</string>
     <string name="rumus_kecepatan">Kecepatan(v) = Jarak(s) / Waktu(t)</string>
-   <string name="judulRumus">RUMUSKU</string>
+    <string name="judulRumus">RUMUSKU</string>
+    <string name="lihat_rumus">Lihat Rumus</string>
+    <string name="isi_about">ISI SENDIRI BESOK ISINYA APA</string>
+    <string name="about_app">Tentang Aplikasi</string>
 </resources>
