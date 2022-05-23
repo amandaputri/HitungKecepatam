@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import org.d3if2036.hitungkecepatan.model.HasilKecepatan
 
-class MainViewModel : ViewModel (){
+class HitungViewModel : ViewModel (){
 
     private val hasilKecepatan = MutableLiveData<HasilKecepatan?>()
 

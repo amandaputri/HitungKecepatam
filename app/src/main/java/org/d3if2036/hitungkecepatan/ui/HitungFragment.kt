@@ -15,8 +15,8 @@ import org.d3if2036.hitungkecepatan.model.HasilKecepatan
 class HitungFragment : Fragment() {
 
     private lateinit var binding: FragmentHitungBinding
-    private val viewModel: MainViewModel by lazy {
-        ViewModelProvider(requireActivity())[MainViewModel::class.java]
+    private val viewModel: HitungViewModel by lazy {
+        ViewModelProvider(requireActivity())[HitungViewModel::class.java]
     }
 
     override fun onCreateView(
