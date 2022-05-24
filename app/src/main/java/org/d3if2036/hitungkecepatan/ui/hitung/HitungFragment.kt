@@ -43,10 +43,6 @@ class HitungFragment : Fragment() {
         }
         binding.shareButton.setOnClickListener { shareData() }
         viewModel.getHasilKecepatan().observe(requireActivity(), {showResult(it)})
-        viewModel.data.observe(viewLifecycleOwner, {
-            if (it == null) return@observe
-            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
-        })
 
     }
 
