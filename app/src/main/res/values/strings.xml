@@ -16,4 +16,10 @@
     <string name="bagikantemp">Jarak : %1$s km\nWaktu : %2$s jam\n\nHasil Kecepatan\n%3$s</string>
     <string name="belum_ada_data">Belum ada data</string>
     <string name="histori">Histori</string>
+    <string name="hasil_x">Hasil Kecepatan: %1$.0f km/jam </string>
+    <string name="data_x">S: %1$.0f km - T: %2$.0f jam</string>
+    <string name="hapus_histori">Hapus Histori</string>
+    <string name="konfirmasi_hapus">Apakah Anda Ingin Menghapus Semua Histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
 </resources>

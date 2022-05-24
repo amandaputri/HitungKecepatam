@@ -3,7 +3,6 @@ package org.d3if2036.hitungkecepatan.ui.histori
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import org.d3if2036.hitungkecepatan.db.KecepatanDao
-import org.d3if2036.hitungkecepatan.model.HistoriViewModel
 import java.lang.IllegalArgumentException
 
 class HistoriViewModelFactory(
