@@ -31,6 +31,28 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@id/judul"
             android:text="@string/judul_kecepatan" />
+
+        <TextView
+            android:layout_marginTop="28dp"
+            android:textStyle="bold"
+            android:id="@+id/judulWaktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/rumusKecepatan"
+            android:text="Rumus Mencari Waktu" />
+
+        <TextView
+            android:layout_marginTop="28dp"
+            android:textStyle="bold"
+            android:id="@+id/judulJarak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/rumusWaktu"
+            android:text="Rumus Mencari Jarak" />
+
+
         <TextView
             android:id="@+id/rumusKecepatan"
             android:layout_width="match_parent"
@@ -38,6 +60,22 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/judulKecepatan"
             android:text="@string/rumus_kecepatan" />
+
+        <TextView
+            android:id="@+id/rumusWaktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/judulWaktu"
+            android:text="@string/rumus_waktu" />
+
+        <TextView
+            android:id="@+id/rumusJarak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/judulJarak"
+            android:text="@string/rumus_jarak" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
