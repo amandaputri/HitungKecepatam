@@ -1,8 +1,9 @@
-package org.d3if2036.hitungkecepatan.ui
+package org.d3if2036.hitungkecepatan.ui.hitung
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -11,13 +12,16 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if2036.hitungkecepatan.R
 import org.d3if2036.hitungkecepatan.databinding.FragmentHitungBinding
+import org.d3if2036.hitungkecepatan.db.KecepatanDb
 import org.d3if2036.hitungkecepatan.model.HasilKecepatan
 
 class HitungFragment : Fragment() {
 
     private lateinit var binding: FragmentHitungBinding
     private val viewModel: HitungViewModel by lazy {
-        ViewModelProvider(requireActivity())[HitungViewModel::class.java]
+        val db = KecepatanDb.getInstance(requireContext())
+        val factory = HitungViewModelFactory(db.dao)
+        ViewModelProvider(this, factory)[HitungViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -39,6 +43,11 @@ class HitungFragment : Fragment() {
         }
         binding.shareButton.setOnClickListener { shareData() }
         viewModel.getHasilKecepatan().observe(requireActivity(), {showResult(it)})
+        viewModel.data.observe(viewLifecycleOwner, {
+            if (it == null) return@observe
+            Log.d("HitungFragment", "Data tersimpan. ID = ${it.id}")
+        })
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -47,12 +56,19 @@ class HitungFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_about) {
-            findNavController().navigate(
-                R.id.action_hitungFragment_to_aboutFragment)
-            return true
+        when(item.itemId){
+            R.id.menu_histori -> {
+                findNavController().navigate(
+                    R.id.action_hitungFragment_to_historiFragment)
+                return true
             }
-            return super.onOptionsItemSelected(item)
+            R.id.menu_about -> {
+                findNavController().navigate(
+                    R.id.action_hitungFragment_to_aboutFragment)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun hitungKec() {

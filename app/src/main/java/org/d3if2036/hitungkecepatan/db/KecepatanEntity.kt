@@ -9,5 +9,5 @@ class KecepatanEntity(
     var id: Long = 0L,
     var tanggal: Long = System.currentTimeMillis(),
     var jarak: Float,
-    val waktu: Float
+    var waktu: Float
 )
